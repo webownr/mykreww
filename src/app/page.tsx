@@ -354,7 +354,7 @@ function DashboardMockup() {
                 style={{
                   backgroundColor: ['rgba(0,212,255,0.2)', 'rgba(0,230,118,0.2)', 'rgba(255,179,0,0.2)'][i],
                   color: ['var(--accent)', 'var(--success)', 'var(--warning)'][i],
-                  ringColor: 'var(--bg-card)',
+                  boxShadow: '0 0 0 2px var(--bg-card)', // Fixes the ringColor error natively
                 }}
               >
                 {init}
@@ -373,6 +373,7 @@ function DashboardMockup() {
     </div>
   );
 }
+
 
 /* ─── TOOLS GRID ────────────────────────────────────────────────────────────── */
 function ToolsSection() {
