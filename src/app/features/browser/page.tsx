@@ -1,8 +1,10 @@
-
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/features/browser/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
-export function BrowserPage() {
+import Link from "next/link";
+import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary } from "@/components/_shared";
+
+export default function BrowserPage() {
   const bookmarks = [
     { icon: "G", label: "Google Analytics", url: "analytics.google.com", color: "#E34135" },
     { icon: "N", label: "Notion",           url: "notion.so",             color: "#FFF" },
@@ -88,6 +90,5 @@ export function BrowserPage() {
       <Footer />
     </>
   );
-}
-
-export default DocumentsPage;
+                    }
+                           
