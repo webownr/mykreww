@@ -1,2 +1,2 @@
-// src/app/investor/page.tsx
-export { InvestorPage as default } from "@/src/app/company/page";
+// src/app/investors/page.tsx
+export { InvestorsPage as default } from "@/src/app/company/page";
