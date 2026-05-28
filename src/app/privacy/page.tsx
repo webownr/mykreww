@@ -1,2 +1,2 @@
 // src/app/privacy/page.tsx
-export { PrivacyPage as default } from "@/app/help";
+export { PrivacyPage as default } from "../help/page";
