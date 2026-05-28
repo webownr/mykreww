@@ -1,12 +1,7 @@
 "use client";
-// ─────────────────────────────────────────────────────────────────────────────
-// FEATURE PAGES: Chat, Notice Board, Documents, Notes, In-App Browser
-//
-// Each section below is a separate page file. Copy each one to its path.
-// ─────────────────────────────────────────────────────────────────────────────
 
 // ═══════════════════════════════════════════════════════════════════════════
-// FILE 1: src/app/features/chat/page.tsx
+// PATH: src/app/features/chat/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════
 import Link from "next/link";
 import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
@@ -20,7 +15,7 @@ const chatFeatures = [
   { icon: "📎", title: "Message Types",     body: "Text messages, Meet link cards, and system notifications — each rendered distinctly for instant scanning." },
 ];
 
-export function ChatPage() {
+export default function ChatPage() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
@@ -134,6 +129,3 @@ export function ChatPage() {
     </>
   );
 }
-
-export default ChatPage;
-
