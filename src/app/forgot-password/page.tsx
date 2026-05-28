@@ -53,4 +53,4 @@ export default function ForgotPasswordPage() {
   );
 }
 
-export default ForgotPasswordPage;
+
