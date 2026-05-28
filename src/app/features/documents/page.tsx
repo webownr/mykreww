@@ -8,7 +8,7 @@ import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, 
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/features/documents/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
-export function DocumentsPage() {
+export default function DocumentsPage() {
   const folders = ["Product", "Engineering", "Design", "Marketing", "HR"];
   const docs = [
     { title: "Product Roadmap Q3 2025",    edited: "2h ago",   words: "2,400" },
