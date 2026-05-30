@@ -2,9 +2,9 @@
 // PATH: src/app/features/notes/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
 
+import { C, GLOBAL_CSS, Nav, PageHero, Section, Footer, btnPrimary } from '../../components/_shared.tsx'; 
 // ✅ FIX: Changed to a default export so Next.js can resolve the page route
 export default function NotesPage() {
-  const GLOBAL_CSS = "";
   
   const notes = [
     { title: "Sprint planning ideas",    preview: "Move standup to async. Try Loom for updates. Consider...", updated: "Just now" },
