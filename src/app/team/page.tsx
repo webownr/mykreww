@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/team/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
-export function TeamPage() {
+export default function TeamPage() {
   const team = [
     { init: "AA", name: "Ayomide Alao",  role: "Founder & CEO",        bio: "Self-taught developer from Lagos. Building Kreww to prove African builders can create world-class products.", color: C.accent, x: "@alphae_x" },
     { init: "VO", name: "Victor O.",     role: "Creative Director",     bio: "Co-founder responsible for Kreww's visual identity, design system, and all product aesthetics.",          color: C.green,  x: "" },
