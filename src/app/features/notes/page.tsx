@@ -1,7 +1,9 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/features/notes/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
-export function NotesPage() {
+
+// ✅ FIX: Changed to a default export so Next.js can resolve the page route
+export default function NotesPage() {
   const notes = [
     { title: "Sprint planning ideas",    preview: "Move standup to async. Try Loom for updates. Consider...", updated: "Just now" },
     { title: "1:1 with Ayomide",         preview: "Talk about the dashboard timeline. Ask about design review...", updated: "1h ago" },
