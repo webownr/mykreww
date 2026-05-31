@@ -1,8 +1,11 @@
+"use client";
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/features/notes/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
 
-import { C, GLOBAL_CSS, Nav, PageHero, Section, Footer, btnPrimary } from '../../components/_shared.tsx'; 
+
+import Link from "next/link";
+import { C, GLOBAL_CSS, Nav, PageHero, Section, Footer, ArrowRight, btnPrimary } from "@/components/_shared";
 // ✅ FIX: Changed to a default export so Next.js can resolve the page route
 export default function NotesPage() {
   

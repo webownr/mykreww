@@ -1,10 +1,9 @@
-"use client";
 // TWO FILES:
 // 1. src/app/blog/page.tsx  — Blog index
 // 2. src/app/blog/[slug]/page.tsx — Individual post (with 3 sample posts)
 
 import Link from "next/link";
-import { Nav, Footer, Section, Eyebrow, ArrowRight, C, GLOBAL_CSS, btnPrimary } from "@/components/_shared";
+import { Nav, Footer, Section, Eyebrow, ArrowRight, C, GLOBAL_CSS } from "@/components/_shared";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SHARED: post data
@@ -205,7 +204,7 @@ export function BlogIndexPage() {
           <p style={{ fontSize: 15, color: C.sec, marginBottom: 28 }}>We write about remote work, building in public, and product. No spam.</p>
           <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", maxWidth: 440, margin: "0 auto" }}>
             <input type="email" placeholder="your@email.com" style={{ flex: 1, minWidth: 200, height: 44, borderRadius: 10, border: `1px solid ${C.border}`, backgroundColor: C.bg, color: C.text, fontSize: 14, padding: "0 16px", outline: "none" }} />
-            <button style={btnPrimary({ height: 44 }) as React.CSSProperties}>Subscribe</button>
+            <button style={{ height: 44, borderRadius: 10, border: "none", backgroundColor: C.accent, color: C.bg, fontSize: 14, fontWeight: 700, padding: "0 20px", cursor: "pointer" }}>Subscribe</button>
           </div>
         </Section>
       </main>
