@@ -2,7 +2,7 @@
 // Paste into: src/app/features/tasks/page.tsx
 
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, CheckIcon, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, CheckIcon, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline, HERO_IMAGES } from "@/components/_shared";
 
 const cols = [
   { id: "todo",       label: "To Do",       color: C.muted,  tasks: [
@@ -40,6 +40,7 @@ export default function TasksPage() {
         <PageHero
           eyebrow="Tasks"
           title={<>Kanban that moves<br />as fast as your team</>}
+          backgroundImage={HERO_IMAGES.tasks}
           subtitle="A visual task board built for remote teams. Assign, track, and ship work — with real-time updates so everyone always knows what's happening."
           cta="Start free trial"
         />

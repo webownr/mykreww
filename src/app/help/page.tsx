@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Nav, Footer, Section, PageHero, Eyebrow, ArrowRight, C, GLOBAL_CSS, btnPrimary } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, Eyebrow, ArrowRight, C, GLOBAL_CSS, btnPrimary, HERO_IMAGES } from "@/components/_shared";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/help/page.tsx
@@ -30,7 +30,7 @@ export function HelpPage() {
       <Nav />
       <main>
         {/* Hero with search */}
-        <section style={{ padding: "88px 24px 72px", textAlign: "center", background: `radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.09) 0%, transparent 70%), ${C.bg}` }}>
+        <section style={{ padding: "88px 24px 72px", textAlign: "center", background: `linear-gradient(180deg, rgba(5,13,26,0.66), rgba(5,13,26,0.94)), radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.14) 0%, transparent 70%), url(${HERO_IMAGES.support}) center/cover no-repeat` }}>
           <div style={{ maxWidth: 640, margin: "0 auto" }}>
             <Eyebrow>Help Centre</Eyebrow>
             <h1 style={{ fontSize: "clamp(28px,4.5vw,50px)", fontWeight: 800, color: C.text, letterSpacing: "-0.03em", lineHeight: 1.05, marginBottom: 16 }}>How can we help?</h1>
@@ -154,6 +154,7 @@ export function ChangelogPage() {
         <PageHero
           eyebrow="Changelog"
           title="What's new in Kreww"
+          backgroundImage={HERO_IMAGES.product}
           subtitle="Every update, improvement, and fix — in plain English. We ship fast and we're transparent about it."
         />
 
@@ -217,6 +218,7 @@ export function SupportPage() {
         <PageHero
           eyebrow="Support"
           title="We're here to help"
+          backgroundImage={HERO_IMAGES.support}
           subtitle="Check the FAQs below, search the Help Centre, or reach out directly. We respond within 4 hours during business hours."
         />
 
@@ -291,7 +293,7 @@ export function TermsPage() {
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <Nav />
       <main>
-        <section style={{ padding: "80px 24px 48px", background: `radial-gradient(ellipse 70% 40% at 50% -5%, rgba(0,212,255,0.07) 0%, transparent 70%), ${C.bg}` }}>
+        <section style={{ padding: "80px 24px 48px", background: `linear-gradient(180deg, rgba(5,13,26,0.68), rgba(5,13,26,0.95)), radial-gradient(ellipse 70% 40% at 50% -5%, rgba(0,212,255,0.10) 0%, transparent 70%), url(${HERO_IMAGES.legal}) center/cover no-repeat` }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Eyebrow>Legal</Eyebrow>
             <h1 style={{ fontSize: "clamp(26px,4vw,46px)", fontWeight: 800, color: C.text, letterSpacing: "-0.025em", marginBottom: 12 }}>Terms of Use</h1>
@@ -336,7 +338,7 @@ export function PrivacyPage() {
       <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
       <Nav />
       <main>
-        <section style={{ padding: "80px 24px 48px", background: `radial-gradient(ellipse 70% 40% at 50% -5%, rgba(0,212,255,0.07) 0%, transparent 70%), ${C.bg}` }}>
+        <section style={{ padding: "80px 24px 48px", background: `linear-gradient(180deg, rgba(5,13,26,0.68), rgba(5,13,26,0.95)), radial-gradient(ellipse 70% 40% at 50% -5%, rgba(0,212,255,0.10) 0%, transparent 70%), url(${HERO_IMAGES.legal}) center/cover no-repeat` }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Eyebrow>Legal</Eyebrow>
             <h1 style={{ fontSize: "clamp(26px,4vw,46px)", fontWeight: 800, color: C.text, letterSpacing: "-0.025em", marginBottom: 12 }}>Privacy Policy</h1>

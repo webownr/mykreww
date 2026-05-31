@@ -3,7 +3,7 @@
 // PATH: src/app/features/browser/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, HERO_IMAGES } from "@/components/_shared";
 
 export default function BrowserPage() {
   const bookmarks = [
@@ -28,6 +28,7 @@ export default function BrowserPage() {
         <PageHero
           eyebrow="In-App Browser"
           title={<>Browse the web without<br />leaving your office</>}
+          backgroundImage={HERO_IMAGES.browser}
           subtitle="An embedded browser panel with a personal bookmarks bar. Open any tool, any dashboard, any link — right inside Kreww."
           cta="Start free trial"
         />

@@ -4,7 +4,7 @@
 // PATH: src/app/features/chat/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline, HERO_IMAGES } from "@/components/_shared";
 
 const chatFeatures = [
   { icon: "#", title: "Team Channels",      body: "Create dedicated channels for projects, departments, or any topic. Keep every conversation in context." },
@@ -24,6 +24,7 @@ export default function ChatPage() {
         <PageHero
           eyebrow="Chat"
           title={<>Team chat that stays<br />in context</>}
+          backgroundImage={HERO_IMAGES.chat}
           subtitle="Channels, DMs, and instant Google Meet links — all inside your Kreww workspace. No tab switching, no lost conversations."
           cta="Start free trial"
         />

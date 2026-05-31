@@ -3,7 +3,7 @@
 // 2. src/app/blog/[slug]/page.tsx — Individual post (with 3 sample posts)
 
 import Link from "next/link";
-import { Nav, Footer, Section, Eyebrow, ArrowRight, C, GLOBAL_CSS } from "@/components/_shared";
+import { Nav, Footer, Section, Eyebrow, ArrowRight, C, GLOBAL_CSS, HERO_IMAGES } from "@/components/_shared";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SHARED: post data
@@ -147,7 +147,7 @@ export function BlogIndexPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <section style={{ padding: "88px 24px 64px", background: `radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.09) 0%, transparent 70%), ${C.bg}` }}>
+        <section style={{ padding: "88px 24px 64px", background: `linear-gradient(180deg, rgba(5,13,26,0.66), rgba(5,13,26,0.94)), radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.14) 0%, transparent 70%), url(${HERO_IMAGES.product}) center/cover no-repeat` }}>
           <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
             <Eyebrow>Blog</Eyebrow>
             <h1 style={{ fontSize: "clamp(28px,4.5vw,52px)", fontWeight: 800, letterSpacing: "-0.03em", color: C.text, lineHeight: 1.05, marginBottom: 16 }}>
@@ -229,7 +229,7 @@ export function BlogPostPage({ params }: { params: { slug: string } }) {
       <Nav />
       <main>
         {/* Post hero */}
-        <section style={{ padding: "80px 24px 60px", background: `radial-gradient(ellipse 70% 50% at 50% -5%, rgba(0,212,255,0.08) 0%, transparent 70%), ${C.bg}` }}>
+        <section style={{ padding: "80px 24px 60px", background: `linear-gradient(180deg, rgba(5,13,26,0.68), rgba(5,13,26,0.96)), radial-gradient(ellipse 70% 50% at 50% -5%, rgba(0,212,255,0.12) 0%, transparent 70%), url(${HERO_IMAGES.product}) center/cover no-repeat` }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: C.muted, marginBottom: 28 }}>
               ← Back to blog

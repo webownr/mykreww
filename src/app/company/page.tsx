@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, Eyebrow, ArrowRight, CheckIcon, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, Eyebrow, ArrowRight, CheckIcon, C, GLOBAL_CSS, btnPrimary, btnOutline, HERO_IMAGES } from "@/components/_shared";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/about/page.tsx
@@ -27,7 +27,7 @@ export function AboutPage() {
         {/* Hero */}
         <section style={{
           padding: "96px 24px 80px", textAlign: "center",
-          background: `radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.10) 0%, transparent 70%), ${C.bg}`,
+          background: `linear-gradient(180deg, rgba(5,13,26,0.64), rgba(5,13,26,0.94)), radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.14) 0%, transparent 70%), url(${HERO_IMAGES.company}) center/cover no-repeat`,
         }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Eyebrow>Our Company</Eyebrow>
@@ -150,6 +150,7 @@ export function TeamPage() {
         <PageHero
           eyebrow="Our Team"
           title={<>Small team.<br />Big ambitions.</>}
+          backgroundImage={HERO_IMAGES.company}
           subtitle="We're a lean founding team building Kreww from Lagos, Nigeria. We move fast, care about quality, and believe African builders can build world-class products."
         />
 
@@ -229,6 +230,7 @@ export function InvestorsPage() {
         <PageHero
           eyebrow="Investors"
           title={<>Building the remote office<br />for the next billion workers</>}
+          backgroundImage={HERO_IMAGES.product}
           subtitle="Kreww is rebuilding workplace culture for teams that deserve more than a task list. We start in Africa — a continent where remote work is growing 20%+ year-on-year on infrastructure built for Silicon Valley."
         />
 
@@ -321,6 +323,7 @@ export function CareersPage() {
         <PageHero
           eyebrow="Careers"
           title={<>Build the future of<br />remote work in Africa</>}
+          backgroundImage={HERO_IMAGES.company}
           subtitle="We're a small, ambitious team building something that matters. If you want to do the best work of your life and own a real piece of what you build — Kreww is for you."
         />
 

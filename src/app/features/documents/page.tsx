@@ -3,7 +3,7 @@
 // Copy each export default function to its own file at the path shown above it.
 
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline, HERO_IMAGES } from "@/components/_shared";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/features/documents/page.tsx
@@ -33,6 +33,7 @@ export default function DocumentsPage() {
         <PageHero
           eyebrow="Documents"
           title={<>One place for everything<br />your team writes</>}
+          backgroundImage={HERO_IMAGES.documents}
           subtitle="Organised folders, a clean rich text editor, and workspace-wide access. Your team's knowledge, always findable."
           cta="Start free trial"
         />

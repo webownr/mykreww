@@ -5,12 +5,15 @@ import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const navTools = [
-  { label: 'The Office', href: '/#office', desc: 'Visual team presence' },
-  { label: 'Tasks', href: '/#tasks', desc: 'Kanban project management' },
-  { label: 'Chat', href: '/#chat', desc: 'Channels, DMs & meetings' },
-  { label: 'Notice Board', href: '/#notices', desc: 'Company-wide announcements' },
-  { label: 'Documents', href: '/#documents', desc: 'Shared workspace docs' },
-  { label: 'In-App Browser', href: '/#browser', desc: 'Browse without leaving' },
+  { label: 'Cyan AI', href: '/features/cyan-ai', desc: 'Workspace assistance' },
+  { label: 'The Office', href: '/features/the-office', desc: 'Visual team presence' },
+  { label: 'Tasks', href: '/features/tasks', desc: 'Kanban project management' },
+  { label: 'Chat', href: '/features/chat', desc: 'Channels, DMs & meetings' },
+  { label: 'Notice Board', href: '/features/notice-board', desc: 'Company-wide announcements' },
+  { label: 'Documents', href: '/features/documents', desc: 'Shared workspace docs' },
+  { label: 'In-App Browser', href: '/features/browser', desc: 'Browse without leaving' },
+  { label: 'Online Meetings', href: '/features/meetings', desc: 'Contextual live huddles' },
+  { label: 'Collaboration', href: '/features/collaboration', desc: 'Team rhythm and presence' },
 ];
 
 const navResources = [
@@ -20,7 +23,7 @@ const navResources = [
 ];
 
 const mobileCoreLinks = [
-  { label: 'Features', href: '/features/the-office' },
+  { label: 'Features', href: '/features' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Our Company', href: '/about' },
   { label: 'Help Centre', href: '/help' },
