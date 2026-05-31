@@ -1,9 +1,9 @@
+"use client";
 // ═══════════════════════════════════════════════════════════════════════════
 // FILE 2: src/app/features/notice-board/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════
 // Copy everything below into that file:
 
-"use client";
 import Link from "next/link";
 import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
 

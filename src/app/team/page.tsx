@@ -1,3 +1,7 @@
+"use client";
+import Link from "next/link";
+import { Nav, Footer, Section, PageHero, Eyebrow, ArrowRight, C, GLOBAL_CSS } from "@/components/_shared";
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/team/page.tsx
 // ═══════════════════════════════════════════════════════════════════════════════
