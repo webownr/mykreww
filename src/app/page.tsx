@@ -1054,12 +1054,12 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
-        <StatsBar />
-        <LogoBar />
+        {/* <StatsBar />
+        <LogoBar />*/}
         <OneWorkspace />
         <CompleteVisibility />
         <ToolsGrid />
-        <Testimonials />
+        {/* <Testimonials />*/}
         <Pricing />
         <FAQ />
         <CTABanner />
