@@ -389,12 +389,12 @@ function Hero() {
             backdropFilter: "blur(8px)",
             transition: "all 200ms",
           }}>
-            <PlayIcon /> Watch Demo
+             Contact Sales
           </Link>
         </div>
 
         {/* Social proof avatars */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14 }}>
+        {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14 }}>
           <div style={{ display: "flex" }}>
             {[IMGS.avatar1, IMGS.avatar2, IMGS.avatar3, IMGS.avatar4].map((src, i) => (
               <img key={i} src={src} alt="" style={{
@@ -414,10 +414,10 @@ function Hero() {
               Trusted by <strong style={{ color: C.text }}>2,000+</strong> businesses
             </div>
           </div>
-        </div>
+        </div>*/}
 
         {/* Scroll hint */}
-        <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+        {/* <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
           <div style={{ fontSize: 10, color: C.muted, letterSpacing: "0.1em", textTransform: "uppercase" }}>Scroll to explore</div>
           <div style={{
             width: 24, height: 38, borderRadius: 12, border: `1.5px solid ${C.muted}`,
@@ -428,7 +428,7 @@ function Hero() {
               animation: "scrollDot 1.6s ease-in-out infinite",
             }} />
           </div>
-        </div>
+        </div>*/}
       </div>
 
       <style>{`
@@ -443,7 +443,7 @@ function Hero() {
 }
 
 // ─── STATS BAR ────────────────────────────────────────────────────────────────
-function StatsBar() {
+{/* function StatsBar() {
   useFadeIn();
   const stats = [
     { v: "2,000+", l: "Businesses using Kreww" },
@@ -477,10 +477,10 @@ function StatsBar() {
       </div>
     </section>
   );
-}
+}*/}
 
 // ─── LOGO TRUST BAR ───────────────────────────────────────────────────────────
-function LogoBar() {
+{/*function LogoBar() {
   useFadeIn();
   const logos = ["Paystack", "Flutterwave", "Andela", "Piggyvest", "Cowrywise", "Kuda", "Moniepoint"];
   return (
@@ -500,7 +500,7 @@ function LogoBar() {
       </div>
     </section>
   );
-}
+}*/}
 
 // ─── ONE WORKSPACE ────────────────────────────────────────────────────────────
 function OneWorkspace() {
@@ -738,7 +738,7 @@ function ToolsGrid() {
 }
 
 // ─── TESTIMONIALS ─────────────────────────────────────────────────────────────
-function Testimonials() {
+{/*function Testimonials() {
   useFadeIn();
   const quotes = [
     { text: "Kreww replaced Slack, Notion, and Asana for us. One place for everything. The team actually opens it every morning now.", name: "Adaeze Nwosu", role: "CEO, Novu Design Agency", avatar: IMGS.avatar3, stars: 5 },
@@ -781,7 +781,7 @@ function Testimonials() {
       </div>
     </section>
   );
-}
+}*/}
 
 // ─── PRICING ──────────────────────────────────────────────────────────────────
 function Pricing() {
