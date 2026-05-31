@@ -7,72 +7,26 @@ import { MarketingFooter } from '@/components/MarketingFooter';
 export const metadata: Metadata = {
   title: 'Pricing — Kreww',
   description:
-    'Tailored plans for teams of any scale. No hidden fees, no per-seat surprises.',
+    'Simple $4.99/month pricing for teams, with approximate Nigerian Naira pricing.',
 };
 
 const plans = [
   {
-    id: 'growth',
-    name: 'Growth',
-    desc: 'Perfect for small businesses and remote teams.',
-    monthlyPrice: '₦25,000',
-    yearlyPrice: '₦20,000',
-    monthlyUSD: '$19',
-    yearlyUSD: '$15',
-    maxMembers: 15,
-    highlight: false,
-    cta: 'Get Started',
-    features: [
-      'Cyan AI for the founder (full access)',
-      'Up to 15 team members',
-      '10,000 Cyan AI tokens/month',
-      '10 Sonnet 4.5 sessions',
-      'Team & Focus collaboration',
-      'Smart task management',
-      'AI-and Kreww collaboration tools',
-    ],
-  },
-  {
-    id: 'business',
-    name: 'Business',
-    desc: 'Designed for growing agencies and medium-scale enterprises.',
-    monthlyPrice: '₦65,000',
-    yearlyPrice: '₦52,000',
-    monthlyUSD: '$49',
-    yearlyUSD: '$39',
+    id: 'pro',
+    name: 'Kreww Pro',
+    desc: 'Everything your team needs to run a virtual office.',
+    monthlyPrice: '$4.99',
+    localPrice: 'Approx. ₦6,842/month in Nigeria',
     maxMembers: null,
     highlight: true,
     cta: 'Get Started',
     features: [
-      'Full Cyan AI for all members',
-      'Unlimited members — no capacity',
-      'Full-priority email support',
-      '50,000 Cyan AI tokens',
-      'Auditor SOC 2 audit token access',
-      'AI integration & team collaboration',
-      'Team analytics & data sync',
-      'Enterprise-grade data security',
-      'Priority support',
-    ],
-  },
-  {
-    id: 'enterprise',
-    name: 'Enterprise',
-    desc: 'Built for large-scale corporations, consulting, and executive teams.',
-    monthlyPrice: 'Custom',
-    yearlyPrice: 'Custom',
-    monthlyUSD: 'Custom',
-    yearlyUSD: 'Custom',
-    maxMembers: null,
-    highlight: false,
-    cta: 'Contact Sales',
-    features: [
-      'Custom AI token allocation',
-      'Dedicated Customer Success lead',
-      'Full-system API access',
-      'Custom security & SLAs',
-      'Auditor SOC 2 audit token',
-      'Everything included in Business',
+      'Full virtual office workspace',
+      'Tasks, chat, notices, documents, notes, and browser',
+      'Cyan AI workspace assistance',
+      'Real-time team presence and collaboration',
+      'All future updates included',
+      'Priority email support',
     ],
   },
 ];
@@ -91,37 +45,25 @@ const allFeatures = [
 ];
 
 const localPrices = [
-  { country: 'Nigeria', starter: '₦25,000', business: '₦65,000' },
-  { country: 'Kenya', starter: 'KES 2,300', business: 'KES 6,000' },
-  { country: 'Ghana', starter: 'GH₵ 210', business: 'GH₵ 550' },
-  { country: 'South Africa', starter: 'R350', business: 'R900' },
-  { country: 'United Kingdom', starter: '£15', business: '£40' },
+  { country: 'Nigeria', price: '₦6,842' },
 ];
 
 const faqs = [
   {
-    q: 'What is the difference between Cyan AI tokens and Sonnet sessions?',
-    a: 'Cyan AI tokens power your real-time virtual office assistant updates — smart notifications, visibility tools, and summaries presented on your workspace. Sonnet sessions are full conversational AI sessions for deep business intelligence work.',
+    q: 'What can my team do inside The Office?',
+    a: 'The Office gives everyone a shared virtual workspace with live presence, status, and quick access to the tools they need to coordinate work without jumping between apps.',
   },
   {
-    q: 'Can I add more team members to the Growth plan later?',
-    a: 'Yes. You can add members up to the 15-member cap on Growth. If you need more, upgrade to Business at any time without losing data.',
+    q: 'How do Tasks help remote teams stay accountable?',
+    a: 'Tasks give teams a visual Kanban board with owners, due dates, progress updates, and real-time movement so everyone can see what is blocked, in review, or ready to ship.',
   },
   {
-    q: 'Do my unused Cyan AI tokens roll over to the next month?',
-    a: 'No. For now, tokens expire at the end of each billing period. A token savings feature is on the roadmap.',
+    q: 'Can we share company-wide updates in Kreww?',
+    a: 'Yes. Notice Board is built for announcements, policy updates, and important broadcasts so updates are visible and easy for the whole company to find.',
   },
   {
-    q: 'How secure is our company data with Cyan AI?',
-    a: 'Completely. Kreww uses industry-standard end-to-end encryption. Your workspace data is never used to train AI models.',
-  },
-  {
-    q: 'What payment methods are accepted?',
-    a: 'Payments are processed securely via Flutterwave. We accept all major cards in 30+ currencies including Naira, Cedis, and KES.',
-  },
-  {
-    q: 'Can I cancel anytime?',
-    a: 'Yes. Cancel from Settings → Billing before your next billing date. No hoops, no tricks.',
+    q: 'Are documents, notes, chat, and browsing included?',
+    a: 'Yes. Kreww brings chat, collaborative documents, private notes, bookmarks, and an in-app browser into the same workspace so teams can keep context in one place.',
   },
 ];
 
@@ -164,41 +106,20 @@ export default function PricingPage() {
             className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl"
             style={{ color: 'var(--text-primary)' }}
           >
-            Tailored Plans for
+            Simple Pricing for
             <br />
-            Teams of Any Scale
+            Every Growing Team
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base" style={{ color: 'var(--text-secondary)' }}>
-            No hidden fees or complicated pricing. Pick the plan that fits your team and start growing today.
+            One affordable plan at $4.99/month. Nigeria visitors can use the approximate whole-number Naira estimate below.
           </p>
 
-          {/* Billing toggle */}
-          <div
-            className="mx-auto mt-8 inline-flex items-center rounded-full p-1"
-            style={{
-              backgroundColor: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-            }}
-          >
-            <span
-              className="rounded-full px-6 py-2 text-sm font-semibold"
-              style={{ backgroundColor: 'var(--accent)', color: '#050D1A' }}
-            >
-              Monthly
-            </span>
-            <span
-              className="cursor-pointer px-6 py-2 text-sm font-medium transition-colors hover:text-white"
-              style={{ color: 'var(--text-muted)' }}
-            >
-              Yearly
-            </span>
-          </div>
         </div>
       </section>
 
       {/* Plans */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-xl gap-6">
           {plans.map((plan) => (
             <div
               key={plan.id}
@@ -245,14 +166,12 @@ export default function PricingPage() {
                   </span>
                 )}
               </div>
-              {plan.maxMembers && (
-                <div className="mt-1 text-xs" style={{ color: 'var(--text-muted)' }}>
-                  Up to {plan.maxMembers} members
-                </div>
-              )}
+              <div className="mt-1 text-xs" style={{ color: 'var(--text-muted)' }}>
+                {plan.localPrice}
+              </div>
 
               <Link
-                href={plan.id === 'enterprise' ? '/contact' : '/signup'}
+                href="/signup"
                 className="mt-6 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl text-sm font-semibold transition-all hover:brightness-110 active:scale-[0.97]"
                 style={{
                   backgroundColor: plan.highlight ? 'var(--accent)' : 'transparent',
@@ -322,9 +241,9 @@ export default function PricingPage() {
             Approximate local pricing
           </h3>
           <p className="mb-5 text-xs" style={{ color: 'var(--text-muted)' }}>
-            We charge in USD. These are estimates based on current exchange rates.
+            We charge $4.99 in USD. The Nigerian Naira estimate is rounded to a whole number and may vary with exchange rates.
           </p>
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-2 sm:grid-cols-1">
             {localPrices.map((lp) => (
               <div
                 key={lp.country}
@@ -339,10 +258,10 @@ export default function PricingPage() {
                 </span>
                 <div className="text-right">
                   <div className="text-xs font-bold" style={{ color: 'var(--text-primary)' }}>
-                    {lp.starter}
+                    {lp.price}
                   </div>
                   <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
-                    Growth
+                    $4.99/month
                   </div>
                 </div>
               </div>
