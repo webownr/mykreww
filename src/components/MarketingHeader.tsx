@@ -19,6 +19,13 @@ const navResources = [
   { label: 'Changelog', href: '/changelog' },
 ];
 
+const mobileCoreLinks = [
+  { label: 'Features', href: '/features/the-office' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Our Company', href: '/about' },
+  { label: 'Help Centre', href: '/help' },
+];
+
 export function MarketingHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
@@ -180,7 +187,7 @@ export function MarketingHeader() {
           style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg-primary)' }}
         >
           <nav className="flex flex-col gap-1">
-            {navTools.map((item) => (
+            {mobileCoreLinks.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
@@ -192,22 +199,6 @@ export function MarketingHeader() {
               </Link>
             ))}
             <div className="my-2 h-px" style={{ backgroundColor: 'var(--border)' }} />
-            <Link
-              href="/about"
-              className="rounded-lg px-3 py-2.5 text-sm font-medium"
-              style={{ color: 'var(--text-secondary)' }}
-              onClick={() => setMobileOpen(false)}
-            >
-              Our Company
-            </Link>
-            <Link
-              href="/pricing"
-              className="rounded-lg px-3 py-2.5 text-sm font-medium"
-              style={{ color: 'var(--text-secondary)' }}
-              onClick={() => setMobileOpen(false)}
-            >
-              Pricing
-            </Link>
             <div className="mt-4 flex flex-col gap-2">
               <Link
                 href="/login"

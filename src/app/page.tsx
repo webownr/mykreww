@@ -207,6 +207,12 @@ function Nav() {
     Resource:     [{ label: "Blog", href: "/blog" }, { label: "Help Centre", href: "/help" }, { label: "Changelog", href: "/changelog" }],
     "Our Company":[{ label: "About", href: "/about" }, { label: "Our Team", href: "/team" }, { label: "Investors", href: "/investors" }],
   };
+  const mobileCoreLinks = [
+    { label: "Features", href: "/features/the-office" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "About", href: "/about" },
+    { label: "Help", href: "/help" },
+  ];
 
   return (
     <header style={{
@@ -278,13 +284,12 @@ function Nav() {
 
       {mobileOpen && (
         <div style={{ backgroundColor: C.bg, borderTop: `1px solid ${C.border}`, padding: "16px 24px 28px" }}>
-          {Object.entries(menus).flatMap(([, items]) => items).map(item => (
+          {mobileCoreLinks.map(item => (
             <Link key={item.label} href={item.href} onClick={() => setMobileOpen(false)} style={{
               display: "block", color: C.sec, fontSize: 15, fontWeight: 500,
               padding: "11px 0", borderBottom: `1px solid ${C.border}`,
             }}>{item.label}</Link>
           ))}
-          <Link href="/pricing" style={{ display: "block", color: C.sec, fontSize: 15, fontWeight: 500, padding: "11px 0", borderBottom: `1px solid ${C.border}` }}>Pricing</Link>
           <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 20 }}>
             <Link href="/login" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 44, borderRadius: 10, border: `1.5px solid ${C.border}`, color: C.text, fontSize: 14, fontWeight: 700 }}>Log in</Link>
             <Link href="/signup" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 44, borderRadius: 10, backgroundColor: C.accent, color: C.bg, fontSize: 14, fontWeight: 700, boxShadow: "0 4px 20px rgba(0,212,255,0.3)" }}>Book Demo</Link>
@@ -786,26 +791,13 @@ function ToolsGrid() {
 // ─── PRICING ──────────────────────────────────────────────────────────────────
 function Pricing() {
   useFadeIn();
-  const [yearly, setYearly] = useState(false);
-  const plans = [
-    {
-      id: "growth", name: "Growth", highlight: false, cta: "Get Started",
-      desc: "Perfect for small businesses and remote teams.",
-      monthly: "₦25,000", yearly: "₦20,000",
-      features: ["Cyan AI for the founder (full access)","Up to 15 team members","10,000 Cyan AI tokens/month","10 Sonnet 4.5 sessions","Team & Focus collaboration","Smart task management","AI-and Kreww collaboration tools"],
-    },
-    {
-      id: "business", name: "Business", highlight: true, cta: "Get Started",
-      desc: "Designed for growing agencies and medium scale enterprises.",
-      monthly: "₦65,000", yearly: "₦52,000",
-      features: ["Full Cyan AI for all members","Unlimited members — no capacity","Full-priority email support","50,000 Cyan AI tokens","Auditor SOC 2 audit token access","AI integration & team collaboration","Team analytics & data sync","Enterprise-grade data security","Priority support"],
-    },
-    {
-      id: "enterprise", name: "Enterprise", highlight: false, cta: "Contact Sales",
-      desc: "Built for large-scale corporations consulting and executive teams.",
-      monthly: "Custom", yearly: "Custom",
-      features: ["Custom AI token allocation","Dedicated Customer Success lead","Full-system API access","Custom security & SLAs","Auditor SOC 2 audit token","Everything included in Business"],
-    },
+  const features = [
+    "Full virtual office workspace",
+    "Tasks, chat, notices, documents, notes, and browser",
+    "Cyan AI workspace assistance",
+    "Real-time team presence and collaboration",
+    "All future updates included",
+    "Priority email support",
   ];
 
   return (
@@ -814,69 +806,49 @@ function Pricing() {
         <div className="kw-fade" style={{ textAlign: "center", marginBottom: 52 }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: C.accent, letterSpacing: "0.09em", textTransform: "uppercase", marginBottom: 16 }}>PRICING</div>
           <h2 style={{ fontSize: "clamp(26px, 3.5vw, 46px)", fontWeight: 900, letterSpacing: "-0.03em", color: C.text, lineHeight: 1.08, marginBottom: 14 }}>
-            Tailored Plans for<br />Teams of Any Scale
+            Simple pricing for<br />every growing team
           </h2>
-          <p style={{ fontSize: 16, color: C.sec, maxWidth: 480, margin: "0 auto 28px" }}>
-            No hidden fees. No per-seat surprises. One flat price per team.
+          <p style={{ fontSize: 16, color: C.sec, maxWidth: 520, margin: "0 auto" }}>
+            One affordable plan. No hidden fees. Nigeria visitors can use the approximate whole-number Naira estimate below.
           </p>
-          <div style={{ display: "inline-flex", backgroundColor: C.card, border: `1px solid ${C.border}`, borderRadius: 100, padding: 4 }}>
-            {["Monthly", "Yearly"].map(label => (
-              <button key={label} onClick={() => setYearly(label === "Yearly")} style={{
-                padding: "8px 26px", borderRadius: 100, border: "none", cursor: "pointer",
-                fontSize: 13, fontWeight: 700, transition: "all 180ms",
-                backgroundColor: (label === "Yearly") === yearly ? C.accent : "transparent",
-                color: (label === "Yearly") === yearly ? C.bg : C.muted,
-              }}>{label} {label === "Yearly" && <span style={{ fontSize: 10, marginLeft: 4, opacity: 0.8 }}>Save 20%</span>}</button>
-            ))}
-          </div>
         </div>
 
-        <div className="kw-plans kw-fade">
-          {plans.map(plan => (
-            <div key={plan.id} style={{
-              position: "relative",
-              backgroundColor: plan.highlight ? C.card : C.card2,
-              border: plan.highlight ? `2px solid rgba(0,212,255,0.45)` : `1px solid ${C.border}`,
-              borderRadius: 22, padding: "32px 26px",
-              boxShadow: plan.highlight ? "0 0 60px rgba(0,212,255,0.09), 0 24px 60px rgba(0,0,0,0.3)" : "none",
-              transition: "transform 200ms",
-            }}>
-              {plan.highlight && (
-                <div style={{
-                  position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)",
-                  background: `linear-gradient(135deg, ${C.accent} 0%, ${C.dim} 100%)`,
-                  color: C.bg, fontSize: 10, fontWeight: 800, letterSpacing: "0.09em",
-                  textTransform: "uppercase", borderRadius: 100, padding: "5px 16px",
-                  whiteSpace: "nowrap", boxShadow: "0 4px 14px rgba(0,212,255,0.3)",
-                }}>⭐ Recommended</div>
-              )}
-              <div style={{ fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.09em", color: plan.highlight ? C.accent : C.muted, marginBottom: 6 }}>{plan.name}</div>
-              <div style={{ fontSize: 13, color: C.muted, lineHeight: 1.55, marginBottom: 22, minHeight: 40 }}>{plan.desc}</div>
-              <div style={{ marginBottom: 24 }}>
-                <span style={{ fontSize: "clamp(24px, 3.2vw, 34px)", fontWeight: 900, color: C.text, letterSpacing: "-0.025em" }}>
-                  {yearly ? plan.yearly : plan.monthly}
-                </span>
-                {plan.monthly !== "Custom" && <span style={{ fontSize: 13, color: C.muted }}> /month</span>}
-              </div>
-              <Link href={plan.id === "enterprise" ? "/contact" : "/signup"}
-                className={plan.highlight ? "kw-plan-cta-solid" : "kw-plan-cta-ghost"}
-                style={{
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  height: 44, borderRadius: 11, fontSize: 14, fontWeight: 700,
-                  marginBottom: 26, transition: "all 160ms",
-                  ...(plan.highlight
-                    ? { background: `linear-gradient(135deg, ${C.accent} 0%, ${C.dim} 100%)`, color: C.bg, border: "none", boxShadow: "0 4px 20px rgba(0,212,255,0.3)" }
-                    : { backgroundColor: "transparent", color: C.accent, border: `1.5px solid rgba(0,212,255,0.28)` }),
-                }}>{plan.cta}</Link>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 11 }}>
-                {plan.features.map(f => (
-                  <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 9, fontSize: 13, color: C.sec, lineHeight: 1.5 }}>
-                    <CheckIcon /> {f}
-                  </li>
-                ))}
-              </ul>
+        <div className="kw-fade" style={{ maxWidth: 520, margin: "0 auto" }}>
+          <div style={{
+            position: "relative",
+            backgroundColor: C.card,
+            border: `2px solid rgba(0,212,255,0.45)`,
+            borderRadius: 22, padding: "36px 28px",
+            boxShadow: "0 0 60px rgba(0,212,255,0.09), 0 24px 60px rgba(0,0,0,0.3)",
+          }}>
+            <div style={{
+              position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)",
+              background: `linear-gradient(135deg, ${C.accent} 0%, ${C.dim} 100%)`,
+              color: C.bg, fontSize: 10, fontWeight: 800, letterSpacing: "0.09em",
+              textTransform: "uppercase", borderRadius: 100, padding: "5px 16px",
+              whiteSpace: "nowrap", boxShadow: "0 4px 14px rgba(0,212,255,0.3)",
+            }}>All-in-one plan</div>
+            <div style={{ fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.09em", color: C.accent, marginBottom: 6 }}>Kreww Pro</div>
+            <div style={{ fontSize: 13, color: C.muted, lineHeight: 1.55, marginBottom: 22 }}>Everything your team needs to run a virtual office.</div>
+            <div style={{ marginBottom: 6 }}>
+              <span style={{ fontSize: "clamp(34px, 5vw, 52px)", fontWeight: 900, color: C.text, letterSpacing: "-0.035em" }}>$4.99</span>
+              <span style={{ fontSize: 14, color: C.muted }}> /month</span>
             </div>
-          ))}
+            <div style={{ fontSize: 13, color: C.sec, marginBottom: 26 }}>Approx. ₦6,842/month in Nigeria</div>
+            <Link href="/signup" className="kw-plan-cta-solid" style={{
+              display: "flex", alignItems: "center", justifyContent: "center",
+              height: 44, borderRadius: 11, fontSize: 14, fontWeight: 700,
+              marginBottom: 26, transition: "all 160ms",
+              background: `linear-gradient(135deg, ${C.accent} 0%, ${C.dim} 100%)`, color: C.bg, border: "none", boxShadow: "0 4px 20px rgba(0,212,255,0.3)",
+            }}>Get Started</Link>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 11 }}>
+              {features.map(f => (
+                <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 9, fontSize: 13, color: C.sec, lineHeight: 1.5 }}>
+                  <CheckIcon /> {f}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -888,10 +860,10 @@ function FAQ() {
   useFadeIn();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const faqs = [
-    { q: "What is the difference between Cyan AI tokens and Sonnet sessions?", a: "Cyan AI tokens power your real-time virtual office assistant updates — smart notifications, visibility tools, and summaries. Sonnet sessions are full conversational AI sessions where you can dive deep into business intelligence with Cyan AI." },
-    { q: "Can I add more team members to the Growth plan later?", a: "Yes. You can add new members to the Growth plan with up to a cap of 15 members. If you need to scale beyond that, you can upgrade to Business at any time from your billing settings without losing any existing data or configurations." },
-    { q: "Do my unused Cyan AI tokens roll over to the next month?", a: "No. For now, Cyan AI tokens do not roll over. Unused tokens expire at the end of each billing period. We are working on a token savings feature that will allow teams to bank unused compute for future strategic work." },
-    { q: "How secure is our company data with Cyan AI?", a: "Completely. Kreww uses industry-standard end-to-end encryption. Your workspace data is never used to train AI models, and access logs are available to workspace administrators." },
+    { q: "What can my team do inside The Office?", a: "The Office gives everyone a shared virtual workspace with live presence, status, and quick access to the tools they need to coordinate work without jumping between apps." },
+    { q: "How do Tasks help remote teams stay accountable?", a: "Tasks give teams a visual Kanban board with owners, due dates, progress updates, and real-time movement so everyone can see what is blocked, in review, or ready to ship." },
+    { q: "Can we share company-wide updates in Kreww?", a: "Yes. Notice Board is built for announcements, policy updates, and important broadcasts so updates are visible and easy for the whole company to find." },
+    { q: "Are documents, notes, chat, and browsing included?", a: "Yes. Kreww brings chat, collaborative documents, private notes, bookmarks, and an in-app browser into the same workspace so teams can keep context in one place." },
   ];
 
   return (
