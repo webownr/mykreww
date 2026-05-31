@@ -2,7 +2,7 @@
 // Paste into: src/app/features/the-office/page.tsx
 
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, Eyebrow, CheckIcon, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, Eyebrow, CheckIcon, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline, HERO_IMAGES } from "@/components/_shared";
 
 const deskCards = [
   { init: "AA", name: "Ayomide A.", role: "Lead Developer", task: "Building The Office", status: "online",  color: C.accent },
@@ -32,6 +32,7 @@ export default function TheOfficePage() {
         <PageHero
           eyebrow="The Office"
           title={<>The heart of your<br />remote team</>}
+          backgroundImage={HERO_IMAGES.office}
           subtitle="A visual floor of desk cards showing every team member's presence, status, and active task — in real time. This is not a list. This is your office."
           cta="Try it free"
         />

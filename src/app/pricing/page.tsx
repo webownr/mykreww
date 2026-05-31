@@ -94,10 +94,10 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-0 -z-10"
+          className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,212,255,0.1), transparent)',
+              'linear-gradient(180deg, rgba(5,13,26,0.66), rgba(5,13,26,0.95)), radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,212,255,0.14), transparent), url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=3840&q=90) center/cover no-repeat',
           }}
         />
         <div className="mx-auto max-w-7xl px-6 pb-14 pt-20 text-center">

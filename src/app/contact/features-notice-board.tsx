@@ -2,7 +2,7 @@
 // Paste into: src/app/features/notice-board/page.tsx
 
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline, HERO_IMAGES } from "@/components/_shared";
 
 const notices = [
   { priority: "urgent",    label: "Urgent",    color: C.red,    title: "System maintenance — Saturday 2 AM WAT",   body: "The platform will be down for 30 minutes. Please save all work and plan accordingly.",    pinned: true,  reactions: ["👍 8", "✅ 5"] },
@@ -29,6 +29,7 @@ export default function NoticeBoardPage() {
         <PageHero
           eyebrow="Notice Board"
           title={<>Company announcements<br />that actually get seen</>}
+          backgroundImage={HERO_IMAGES.notices}
           subtitle="Priority-tagged notices ensure urgent messages rise to the top. Pin, react, and comment — the whole team stays informed in real time."
           cta="Start free trial"
         />

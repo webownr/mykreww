@@ -3,19 +3,19 @@ import { Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const footerLinks = {
   Tools: [
-    { label: 'Cyan AI', href: '/#cyan-ai' },
-    { label: 'Virtual Office', href: '/#office' },
-    { label: 'Chat', href: '/#chat' },
-    { label: 'Kanban', href: '/#tasks' },
-    { label: 'Online Meeting', href: '/#meetings' },
-    { label: 'Notice Board', href: '/#notices' },
-    { label: 'Team collaboration', href: '/#collaboration' },
+    { label: 'Cyan AI', href: '/features/cyan-ai' },
+    { label: 'Virtual Office', href: '/features/the-office' },
+    { label: 'Chat', href: '/features/chat' },
+    { label: 'Kanban', href: '/features/tasks' },
+    { label: 'Online Meeting', href: '/features/meetings' },
+    { label: 'Notice Board', href: '/features/notice-board' },
+    { label: 'Team collaboration', href: '/features/collaboration' },
   ],
   'Our Company': [
-    { label: 'Our Team', href: '/about' },
+    { label: 'Our Team', href: '/team' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Investor', href: '/investor' },
-    { label: 'Product', href: '/' },
+    { label: 'Investor', href: '/investors' },
+    { label: 'Product', href: '/features' },
   ],
   Resources: [
     { label: 'Support', href: '/support' },

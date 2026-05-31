@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, Eyebrow, ArrowRight, C, GLOBAL_CSS } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, Eyebrow, ArrowRight, C, GLOBAL_CSS, HERO_IMAGES } from "@/components/_shared";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // PATH: src/app/team/page.tsx
@@ -24,6 +24,7 @@ export default function TeamPage() {
         <PageHero
           eyebrow="Our Team"
           title={<>Small team.<br />Big ambitions.</>}
+          backgroundImage={HERO_IMAGES.company}
           subtitle="We're a lean founding team building Kreww from Lagos, Nigeria. We move fast, care about quality, and believe African builders can build world-class products."
         />
 

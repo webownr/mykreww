@@ -5,7 +5,7 @@
 // Copy everything below into that file:
 
 import Link from "next/link";
-import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline } from "@/components/_shared";
+import { Nav, Footer, Section, PageHero, ArrowRight, C, GLOBAL_CSS, btnPrimary, btnOutline, HERO_IMAGES } from "@/components/_shared";
 
 const notices = [
   { priority: "urgent",    label: "Urgent",    color: "#FF5252", title: "System maintenance — Saturday 2 AM WAT", body: "The platform will be down for 30 mins. Plan accordingly.", pinned: true, reactions: ["👍 8", "✅ 5"] },
@@ -22,6 +22,7 @@ export default function NoticeBoardPage() {
         <PageHero
           eyebrow="Notice Board"
           title={<>Company-wide announcements<br />that actually get seen</>}
+          backgroundImage={HERO_IMAGES.notices}
           subtitle="Priority-tagged notices ensure urgent messages rise to the top. Everyone sees the same board, in real time."
           cta="Start free trial"
         />

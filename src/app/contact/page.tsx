@@ -19,9 +19,9 @@ export default function ContactPage() {
 
       <section className="relative overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-0 -z-10"
+          className="pointer-events-none absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,212,255,0.08), transparent)',
+            background: 'linear-gradient(180deg, rgba(5,13,26,0.68), rgba(5,13,26,0.96)), radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,212,255,0.12), transparent), url(https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=3840&q=90) center/cover no-repeat',
           }}
         />
         <div className="mx-auto max-w-7xl px-6 py-20">

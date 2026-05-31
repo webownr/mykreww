@@ -91,6 +91,40 @@ export const GLOBAL_CSS = `
   }
 `;
 
+
+// ── HIGH-RES CONTEXT IMAGES ──────────────────────────────────────────────────
+export const HERO_IMAGES = {
+  office: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=3840&q=90",
+  tasks: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=3840&q=90",
+  chat: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=3840&q=90",
+  notices: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=3840&q=90",
+  documents: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=3840&q=90",
+  notes: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=3840&q=90",
+  browser: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=3840&q=90",
+  ai: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=3840&q=90",
+  meetings: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=3840&q=90",
+  collaboration: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=3840&q=90",
+  product: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=3840&q=90",
+  company: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=3840&q=90",
+  support: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=3840&q=90",
+  legal: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=3840&q=90",
+};
+
+export function ContextImage({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <div style={{
+      position: "relative", overflow: "hidden", borderRadius: 22, minHeight: 320,
+      border: `1px solid ${C.border}`, boxShadow: "0 26px 80px rgba(0,0,0,0.42)",
+      backgroundImage: `linear-gradient(180deg, rgba(5,13,26,0.08), rgba(5,13,26,0.62)), url(${src})`,
+      backgroundSize: "cover", backgroundPosition: "center",
+    }} role="img" aria-label={alt}>
+      {caption && (
+        <div style={{ position: "absolute", left: 18, right: 18, bottom: 18, color: C.text, fontSize: 13, fontWeight: 700, letterSpacing: "0.01em" }}>{caption}</div>
+      )}
+    </div>
+  );
+}
+
 // ── SVG ICONS ────────────────────────────────────────────────────────────────
 export const ChevronDown = () => (
   <svg width="11" height="11" viewBox="0 0 11 11" fill="none" style={{ flexShrink: 0 }}>
@@ -157,15 +191,17 @@ export function Section({ children, bg, style }: { children: React.ReactNode; bg
 
 // ── PAGE HERO ────────────────────────────────────────────────────────────────
 export function PageHero({
-  eyebrow, title, subtitle, cta, ctaHref = "/signup",
+  eyebrow, title, subtitle, cta, ctaHref = "/signup", backgroundImage,
 }: {
   eyebrow: string; title: React.ReactNode; subtitle: string;
-  cta?: string; ctaHref?: string;
+  cta?: string; ctaHref?: string; backgroundImage?: string;
 }) {
   return (
     <section style={{
-      padding: "88px 24px 80px", textAlign: "center",
-      background: `radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.10) 0%, transparent 70%), ${C.bg}`,
+      position: "relative", overflow: "hidden", padding: "108px 24px 96px", textAlign: "center",
+      background: backgroundImage
+        ? `linear-gradient(180deg, rgba(5,13,26,0.62), rgba(5,13,26,0.92)), radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.18) 0%, transparent 70%), url(${backgroundImage}) center/cover no-repeat`
+        : `radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,212,255,0.10) 0%, transparent 70%), ${C.bg}`,
     }}>
       <div style={{ maxWidth: 780, margin: "0 auto" }}>
         <Eyebrow>{eyebrow}</Eyebrow>
@@ -194,6 +230,7 @@ export function Nav() {
 
   const menus: Record<string, { label: string; href: string }[]> = {
     Tools: [
+      { label: "Cyan AI",        href: "/features/cyan-ai" },
       { label: "The Office",     href: "/features/the-office" },
       { label: "Tasks",          href: "/features/tasks" },
       { label: "Chat",           href: "/features/chat" },
@@ -201,6 +238,8 @@ export function Nav() {
       { label: "Documents",      href: "/features/documents" },
       { label: "Notes",          href: "/features/notes" },
       { label: "In-App Browser", href: "/features/browser" },
+      { label: "Online Meetings", href: "/features/meetings" },
+      { label: "Collaboration",   href: "/features/collaboration" },
     ],
     Resource: [
       { label: "Blog",        href: "/blog" },
@@ -324,13 +363,13 @@ export function Nav() {
 export function Footer() {
   const cols: Record<string, { label: string; href: string }[]> = {
     Tools: [
-      { label: "The Office",     href: "/features/the-office" },
+      { label: "Cyan AI",        href: "/features/cyan-ai" },
       { label: "Virtual Office", href: "/features/the-office" },
       { label: "Chat",           href: "/features/chat" },
       { label: "Kanban",         href: "/features/tasks" },
-      { label: "Online Meeting", href: "/features/chat" },
+      { label: "Online Meeting", href: "/features/meetings" },
       { label: "Notice Board",   href: "/features/notice-board" },
-      { label: "Team collaboration", href: "/features/the-office" },
+      { label: "Team collaboration", href: "/features/collaboration" },
     ],
     "Our Company": [
       { label: "Our Team",  href: "/team" },

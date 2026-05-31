@@ -5,7 +5,7 @@
 
 
 import Link from "next/link";
-import { C, GLOBAL_CSS, Nav, PageHero, Section, Footer, ArrowRight, btnPrimary } from "@/components/_shared";
+import { C, GLOBAL_CSS, Nav, PageHero, Section, Footer, ArrowRight, btnPrimary, HERO_IMAGES } from "@/components/_shared";
 // ✅ FIX: Changed to a default export so Next.js can resolve the page route
 export default function NotesPage() {
   
@@ -30,6 +30,7 @@ export default function NotesPage() {
         <PageHero
           eyebrow="Notes"
           title={<>Your private space to<br />think and plan</>}
+          backgroundImage={HERO_IMAGES.notes}
           subtitle="Personal notes that only you can see. Keep ideas, meeting notes, to-dos, and anything else right inside your workspace."
           cta="Start free trial"
         />
